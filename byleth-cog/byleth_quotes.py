@@ -2,8 +2,6 @@ import discord
 from redbot.core import commands
 from random import choice
 from typing import List
-class BylethQuotes(commands.Cog):
-    """My custom cog"""
 
 
 quotes: List[str] = [
@@ -100,7 +98,7 @@ class BylethQuotes(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-     def format_help_for_context(self, ctx: commands.Context) -> str:
+    def format_help_for_context(self, ctx: commands.Context) -> str:
         """
             Thanks Sinbad!
         """
@@ -118,5 +116,5 @@ class BylethQuotes(commands.Cog):
             embed.add_field(name=("<:bylethSwag:743093021956112394>"), inline=False)
         embed.set_author(name=("Professor"))
         embed.set_footer(icon_url=("https://cdna.artstation.com/p/assets/images/images/024/428/836/large/kaya-kepa-dancer-byleth-zoom.jpg"))
-        msg = await ctx.send(embed=embed)
+        # msg = await ctx.send(embed=embed)
         
