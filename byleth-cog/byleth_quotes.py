@@ -1,5 +1,6 @@
 import discord
 from redbot.core import commands
+from redbot.core.il8n import Translator, cog_il8n
 from random import choice
 from typing import List
 
@@ -88,6 +89,7 @@ quotes: List[str] = [
 
 ]
 
+@cog_il8n
 class BylethQuotes(commands.Cog):
     """
         Post random Byleth quotes :)
