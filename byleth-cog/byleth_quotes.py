@@ -90,7 +90,7 @@ quotes: List[str] = [
 
 class BylethQuotes(commands.Cog):
     """
-    Post random Byleth quotes :)
+        Post random Byleth quotes :)
     """
     __author__ = ["hopolapopola"]
     __version__ = "0.0.1"
@@ -107,7 +107,7 @@ class BylethQuotes(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 60, commands.BucketType.guild)
     @commands.bot_has_permissions(embed_links=True, add_reactions=True)
-    async def crit(self, ctx: commands.Context):
+    async def quote(self, ctx: commands.Context):
         """Post embed with random Byleth quotes"""
         embed = discord.Embed(colour=discord.Colour.dark_aqua())
         
