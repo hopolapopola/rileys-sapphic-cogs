@@ -1,6 +1,6 @@
 import discord
 from redbot.core import commands
-from redbot.core.il8n import Translator, cog_il8n
+#from redbot.core.il8n import Translator, cog_il8n
 from random import choice
 from typing import List
 
@@ -88,8 +88,34 @@ quotes: List[str] = [
     ("We won't back down."),
 
 ]
-
-@cog_il8n
+images: List[str] = [
+    ("https://i.redd.it/r18lmn76jaj41.jpg"),
+    ("https://i.imgur.com/kMMe4x4.jpg"),
+    ("https://i.imgur.com/NY9rgTj.jpg"),
+    ("https://i.imgur.com/9airR1C.jpg"),
+    ("https://i.redd.it/f5r6zj29k4551.jpg"),
+]
+images_all: List[str] = [
+    ("https://i.redd.it/r18lmn76jaj41.jpg"),
+    ("https://i.imgur.com/kMMe4x4.jpg"),
+    ("https://i.imgur.com/NY9rgTj.jpg"),
+    ("https://i.imgur.com/9airR1C.jpg"),
+    ("https://i.redd.it/f5r6zj29k4551.jpg"),
+    ("https://i.redd.it/0q9uplumf8s41.jpg"),
+    ("https://i.imgur.com/DX5K3p1.jpg"),
+    ("https://i.redd.it/eojhr24bb8z41.jpg"),
+]
+images_edeleth: List[str] = [
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118342608519168/image0.jpg"),
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118342818103346/image1.jpg"),
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118343011172443/image2.jpg"),
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118343271350302/image3.jpg"),
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118414918189096/image0.jpg"),
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118567897039020/IMG_0967.JPG"),
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118723841523822/IMG_0931.JPG"),
+    ("https://cdn.discordapp.com/attachments/743117606919340124/743118835187449986/IMG_0881.JPG"),
+]
+#@cog_il8n
 class BylethQuotes(commands.Cog):
     """
         Post random Byleth quotes :)
@@ -107,16 +133,39 @@ class BylethQuotes(commands.Cog):
         pre_processed = super().format_help_for_context(ctx)
         return f"{pre_processed}\n\nCog Version: {self.__version__}"
     @commands.command()
-    @commands.cooldown(1, 60, commands.BucketType.guild)
-    @commands.bot_has_permissions(embed_links=True, add_reactions=True)
+    @commands.cooldown(1, 5, commands.BucketType.guild)
+    @commands.bot_has_permissions(embed_links=True)
     async def quote(self, ctx: commands.Context):
         """Post embed with random Byleth quotes"""
-        embed = discord.Embed(colour=discord.Colour.dark_aqua())
-        
-        message = "\n".join(choice(quotes) for line in range(10))
+        embed = discord.Embed(colour=discord.Colour.green())
+        message = "\n".join(choice(quotes) for line in range(1))
+        image = "\n".join(choice(images) for line in range (1))
         if message != "":
-            embed.add_field(name=("<:bylethSwag:743093021956112394>"), inline=False)
+            embed.add_field(name=("<:bylethSwag:743093021956112394>"), value=message, inline=True)
         embed.set_author(name=("Professor"))
-        embed.set_footer(icon_url=("https://cdna.artstation.com/p/assets/images/images/024/428/836/large/kaya-kepa-dancer-byleth-zoom.jpg"))
-        # msg = await ctx.send(embed=embed)
-        
+        embed.set_image(url=image)
+        await ctx.send(embed=embed)
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    @commands.cooldown(1, 5, commands.BucketType.guild)
+    async def byleth(self, ctx: commands.Context):
+        image = "\n".join(choice(images_all) for line in range (1))
+        embed = discord.Embed(colour=discord.Colour.green())
+        embed.set_image(url=image)
+        await ctx.send(embed=embed)
+    @commands.command(aliases=["maya", "riley"])
+    @commands.bot_has_permissions(embed_links=True)
+    @commands.cooldown(1, 5, commands.BucketType.guild)
+    async def edeleth(self, ctx: commands.Context):
+        image = "\n".join(choice(images_edeleth) for line in range (1))
+        embed = discord.Embed(colour=discord.Colour.green())
+        embed.set_image(url=image)
+        await ctx.send(embed=embed)
+    @commands.command()
+    async def edelgard(self, ctx: commands.Context):
+        message = "I love my wife <:bylethPillow:743120663715250227> <:bylethHeart:743120792346296400>"
+        await ctx.send(message)
+    @commands.command(aliases=["michelle"])
+    async def ssb(self, ctx: commands.Context):
+        message = "I would beat <@!277183660636110859> in a 1v1 BF no items 3 stock 8 minutes."
+        await ctx.send(message)
