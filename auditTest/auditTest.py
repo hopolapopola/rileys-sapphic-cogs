@@ -1,0 +1,25 @@
+import discord
+from redbot.core import commands
+
+class AuditTest(commands.Cog):
+    """
+        Test out how the audit log actions are returned
+        THE HELP COMMAND DOES NOTHING
+    """
+    __author__ = ["hopolapopola"]
+    __version__ = "0.1b"
+
+    def __init__(self, bot):
+        self.bot = bot
+    
+    @commands.command()
+    @commands.cooldown(1, 3, commands.BucketType.guild)
+    @commands.bot_has_permissions(embed_links=True)
+    async def listActions(self, ctx: commands.Context):
+        embed = discord.Embed(colour=discord.Colour.green())
+        action = discord.AuditLogAction
+        i = 1
+        async for log in discord.Guild.audit_logs(limit=5, action=action):
+            entry = str(discord.Guild.audit_logs(action)) + " " + str(discord.Guild.audit_logs(user)) + " " + str(discord.Guild.audit_logs(created_at))
+            embed.add_field(name=str(i), value=entry)
+        await ctx.send(embed=embed)
