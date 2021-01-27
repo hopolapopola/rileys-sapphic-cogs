@@ -19,7 +19,7 @@ class AuditTest(commands.Cog):
         embed = discord.Embed(colour=discord.Colour.green())
         action = discord.AuditLogAction
         i = 1
-        async for entry in discord.Guild.audit_logs(limit=5):
+        async for entry in discord.Guild.audit_logs(user=None, limit=5):
             formatted_entry = '{0.user} did {0.action} to {0.target}'.format(entry)
             embed.add_field(name=str(i), value=formatted_entry)
         await ctx.send(embed=embed)
