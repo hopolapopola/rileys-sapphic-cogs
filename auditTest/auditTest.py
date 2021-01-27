@@ -15,7 +15,7 @@ class AuditTest(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 3, commands.BucketType.guild)
     @commands.bot_has_permissions(embed_links=True)
-    async def listActions(self, ctx: commands.Context):
+    async def listActions(ctx: commands.Context):
         embed = discord.Embed(colour=discord.Colour.green())
         action = discord.AuditLogAction
         i = 1
