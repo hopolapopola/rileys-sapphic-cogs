@@ -14,11 +14,11 @@ class AuditTest(commands.Cog):
     
     @commands.command()
     @commands.cooldown(1, 3, commands.BucketType.guild)
-    @commands.bot_has_permissions(embed_links=True)
+    @commands.bot_has_permissions(embed_links=True, )
     async def listActions(self, ctx: commands.Context):
         embed = discord.Embed(colour=discord.Colour.green())
         i = 1
-        async for entry in discord.Guild.audit_logs(self, limit=5):
+        async for entry in discord.Guild.audit_logs(limit=5):
             formatted_entry = '{0.user} did {0.action} to {0.target}'.format(entry)
             embed.add_field(name=str(i), value=formatted_entry)
         await ctx.send(embed=embed)
