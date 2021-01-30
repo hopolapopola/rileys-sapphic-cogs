@@ -1,4 +1,5 @@
 import discord
+import string
 from redbot.core import commands
 
 class bigGay(commands.Cog):
@@ -16,23 +17,23 @@ class bigGay(commands.Cog):
         Be gay, do gay
         """
         out_num = 0
-        out_str = ""
+        out_str = " "
         try: 
             for letter in the_gay:
                 out_num += string.ascii_letters.index(letter)
                 if string.ascii_letters.index(letter) != 0: 
                     out_num /= string.ascii_letters.index(letter)
             if (out_num % 2) == 0:
-                out_str.append("you have the Big Gay")
+                out_str = "you have the Big Gay"
             elif (out_num / 100) > 1:
-                out_str.append("pingu")
+                out_str = "pingu"
             elif (out_num ** 2) < 100: 
-                out_str.append("https://ebay.com")
+                out_str = "https://ebay.com"
             elif out_num == 1:
-                out_str.append("<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776> <:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>")
+                out_str = "<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776> <:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>"
             else:
-                out_str.append("try again.")
+                out_str = "try again."
         except: 
-            out_str.append("use latin alphabet only!")
+            out_str = "use latin alphabet only!"
         await ctx.send(out_str)
         
