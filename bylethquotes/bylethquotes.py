@@ -114,6 +114,9 @@ images_edeleth: List[str] = [
     ("https://cdn.discordapp.com/attachments/743117606919340124/743118567897039020/IMG_0967.JPG"),
     ("https://cdn.discordapp.com/attachments/743117606919340124/743118723841523822/IMG_0931.JPG"),
     ("https://cdn.discordapp.com/attachments/743117606919340124/743118835187449986/IMG_0881.JPG"),
+    ("https://cdn.discordapp.com/attachments/636033361009180672/804561600857899038/Ert18bbUcAA8Cyg.png"),
+    ("https://cdn.discordapp.com/attachments/636033361009180672/804561542606749706/EsG8xBlVQAEaIEI.png"),
+
 ]
 #@cog_il8n
 class BylethQuotes(commands.Cog):
@@ -169,3 +172,4 @@ class BylethQuotes(commands.Cog):
     async def ssb(self, ctx: commands.Context):
         message = "I would beat <@!277183660636110859> in a 1v1 BF no items 3 stock 8 minutes."
         await ctx.send(message)
+    
