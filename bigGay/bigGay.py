@@ -12,6 +12,7 @@ class bigGay(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
+    @commands.command()
     async def gay(self, ctx: commands.Context, the_gay):
         """
         Be gay, do gay
@@ -35,5 +36,6 @@ class bigGay(commands.Cog):
                 out_str = "try again."
         except: 
             out_str = "use latin alphabet only!"
-        await ctx.send(out_str)
+        message = out_str
+        await ctx.send(message)
         
