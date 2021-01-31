@@ -28,7 +28,7 @@ class bigGay(commands.Cog):
                 out_str = "you have the Big Gay"
             elif (out_num / 100) > 1:
                 out_str = "pingu"
-            elif (out_num ** 2) < 100: 
+            elif (out_num ** 2) > 100: 
                 out_str = "https://ebay.com"
             elif out_num == 1:
                 out_str = "<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776> <:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>"
