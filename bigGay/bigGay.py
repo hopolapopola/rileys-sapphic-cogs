@@ -31,7 +31,7 @@ class bigGay(commands.Cog):
             elif (out_num ** 2) > 100: 
                 out_str = "https://ebay.com"
             elif out_num == 1:
-                out_str = "<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776> <:redditmoment:686443293873012776>\n<:redditmoment:686443293873012776><:redditmoment:686443293873012776><:redditmoment:686443293873012776>"
+                out_str = "<:redditmoment:805272210704826379><:redditmoment:805272210704826379><:redditmoment:805272210704826379>\n<:redditmoment:805272210704826379> <:redditmoment:805272210704826379>\n<:redditmoment:805272210704826379><:redditmoment:805272210704826379><:redditmoment:805272210704826379>"
             else:
                 out_str = "try again."
         except: 
