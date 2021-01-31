@@ -22,8 +22,8 @@ class bigGay(commands.Cog):
         try: 
             for letter in the_gay:
                 out_num += string.ascii_letters.index(letter)
-                if string.ascii_letters.index(letter) != 0: 
-                    out_num /= string.ascii_letters.index(letter)
+                # if string.ascii_letters.index(letter) != 0: 
+                #     out_num /= string.ascii_letters.index(letter)
             if (out_num % 2) == 0:
                 out_str = "you have the Big Gay"
             elif (out_num / 100) > 1:
