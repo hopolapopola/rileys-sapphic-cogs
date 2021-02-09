@@ -38,4 +38,7 @@ class bigGay(commands.Cog):
             out_str = "use latin alphabet only!"
         message = out_str
         await ctx.send(message)
-        
+    @commands.command()
+    async def input(self, ctx: commands.Context, input):
+        message = input
+        await ctx.send(message)  
