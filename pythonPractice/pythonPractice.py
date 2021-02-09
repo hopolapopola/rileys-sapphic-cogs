@@ -35,6 +35,8 @@ class pythonPractice(commands.Cog):
         Input is a string (with spaces) containing +, -, /, or x for the 4 basic operators
         """
         try:
+            x = int(x)
+            y = int(y)
             if operator == '+':
                 out_str = str(x + y)
             elif operator == '-':
