@@ -38,7 +38,6 @@ class pythonPractice(commands.Cog):
             if type == "int":
                 x = int(x)
                 y = int(y)
-            elif type == "str":
                 if operator == '+':
                     out_str = str(x + y)
                 elif operator == '-':
@@ -49,6 +48,11 @@ class pythonPractice(commands.Cog):
                     out_str = str(x * y)
                 else:
                     out_str = "oops, operator machine :b:roke"
+            elif type == "str":
+                if operator == "+"':
+                    out_str = str(x + y)
+                else:
+                    out_str = "Big chungus is disappointed in you"
             else:
                 out_str = type
         except:
