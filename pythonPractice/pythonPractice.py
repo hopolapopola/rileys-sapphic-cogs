@@ -30,13 +30,14 @@ class pythonPractice(commands.Cog):
             out_str = "Ah, that wasn't the right input"
         await ctx.send(out_str)
     @commands.command()
-    async def calc(self, ctx: commands.Context, x, operator, y):
+    async def calc(self, ctx: commands.Context, x, operator, y, type="int"):
         """
-        Input is a string (with spaces) containing +, -, /, or x for the 4 basic operators
+        Input is a string (with spaces) containing +, -, /, or x for the 4 basic operators, with optional arg for int or str operation
         """
         try:
-            x = int(x)
-            y = int(y)
+            if type == "int":
+                x = int(x)
+                y = int(y)
             if operator == '+':
                 out_str = str(x + y)
             elif operator == '-':
