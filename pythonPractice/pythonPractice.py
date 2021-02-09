@@ -38,16 +38,19 @@ class pythonPractice(commands.Cog):
             if type == "int":
                 x = int(x)
                 y = int(y)
-            if operator == '+':
-                out_str = str(x + y)
-            elif operator == '-':
-                out_str = str(x - y)
-            elif operator == '/':
-                out_str = str(x / y)
-            elif operator == 'x':
-                out_str = str(x * y)
+            elif type == "str":
+                if operator == '+':
+                    out_str = str(x + y)
+                elif operator == '-':
+                    out_str = str(x - y)
+                elif operator == '/':
+                    out_str = str(x / y)
+                elif operator == 'x':
+                    out_str = str(x * y)
+                else:
+                    out_str = "oops, operator machine :b:roke"
             else:
-                out_str = "oops, operator machine :b:roke"
+                out_str = type
         except:
             out_str = "http://www.lovemysurface.net/wp-content/uploads/2015/07/Windows-10-Upgrade-Error-Something-Happened.jpg"
         await ctx.send(out_str)
