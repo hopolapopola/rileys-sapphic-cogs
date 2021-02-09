@@ -39,6 +39,6 @@ class bigGay(commands.Cog):
         message = out_str
         await ctx.send(message)
     @commands.command()
-    async def intest(self, ctx: commands.Context, input):
-        message = input
+    async def intest(self, ctx: commands.Context, input, in2, in3):
+        message = input + " " + in2 + " " + in3
         await ctx.send(message)  
