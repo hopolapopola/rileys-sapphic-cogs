@@ -30,18 +30,11 @@ class pythonPractice(commands.Cog):
             out_str = "Ah, that wasn't the right input"
         await ctx.send(out_str)
     @commands.command()
-    async def calc(self, ctx: commands.Context, input):
+    async def calc(self, ctx: commands.Context, x, operator, y):
         """
         Input is a string (with spaces) containing +, -, /, or x for the 4 basic operators
         """
         try:
-            in_arr = input.split(' ')
-        except: 
-            out_str = "split go womp womp"    
-        try:
-            x = int(in_arr[0])
-            y = int(in_arr[2])
-            operator = str(in_arr[1])
             if operator == '+':
                 out_str = str(x + y)
             elif operator == '-':
