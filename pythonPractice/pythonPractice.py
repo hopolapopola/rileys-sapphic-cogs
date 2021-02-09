@@ -34,12 +34,14 @@ class pythonPractice(commands.Cog):
         """
         Input is a string (with spaces) containing +, -, /, or x for the 4 basic operators
         """
-        first_half = input.partition(' ')
-        second_half = first_half[2].partition(' ')
         try:
-            x = int(first_half[0])
-            y = int(second_half[2])
-            operator = str(second_half[0])
+            in_arr = input.split(' ')
+        except: 
+            out_str = "split go womp womp"    
+        try:
+            x = int(in_arr[0])
+            y = int(in_arr[2])
+            operator = str(in_arr[1])
             if operator == '+':
                 out_str = str(x + y)
             elif operator == '-':
