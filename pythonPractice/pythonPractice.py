@@ -49,7 +49,7 @@ class pythonPractice(commands.Cog):
                 else:
                     out_str = "oops, operator machine :b:roke"
             elif type == "str":
-                if operator == "+"':
+                if operator == "+":
                     out_str = str(x + y)
                 else:
                     out_str = "Big chungus is disappointed in you"
