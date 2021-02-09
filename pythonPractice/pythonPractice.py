@@ -28,4 +28,28 @@ class pythonPractice(commands.Cog):
                 out_str = "cheeky. but nope, not gonna work"
         except:
             out_str = "Ah, that wasn't the right input"
-        await ctx.send(out_str)        
+        await ctx.send(out_str)
+    @commands.command()
+    async def calc(self, ctx: commands.Context, input):
+        """
+        Input is a string (with spaces) containing +, -, /, or x for the 4 basic operators
+        """
+        first_half = input.partition(' ')
+        second_half = first_half[2].partition(' ')
+        try:
+            x = int(first_half[0])
+            y = int(second_half[2])
+            operator = str(second_half[0])
+            if operator == '+':
+                out_str = str(x + y)
+            elif operator == '-':
+                out_str = str(x - y)
+            elif operator == '/':
+                out_str = str(x / y)
+            elif operator == 'x':
+                out_str = str(x * y)
+            else:
+                out_str = "http://www.lovemysurface.net/wp-content/uploads/2015/07/Windows-10-Upgrade-Error-Something-Happened.jpg"
+        except:
+            out_str = "http://www.lovemysurface.net/wp-content/uploads/2015/07/Windows-10-Upgrade-Error-Something-Happened.jpg"
+        await ctx.send(out_str)
