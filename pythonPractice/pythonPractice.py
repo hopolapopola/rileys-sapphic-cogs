@@ -19,11 +19,13 @@ class pythonPractice(commands.Cog):
         try: 
             bias = int(bias)
             result = random.randrange(101)
-            if bias < 100:
+            if (bias <= 100) and (bias >= 0):
                 if result >= bias: 
                     out_str = "That there is a tails"
                 elif result < bias:
                     out_str = "That there is a heads"
+            else:
+                out_str = "cheeky. but nope, not gonna work"
         except:
             out_str = "Ah, that wasn't the right input"
         await ctx.send(out_str)        
