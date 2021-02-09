@@ -49,7 +49,7 @@ class pythonPractice(commands.Cog):
             elif operator == 'x':
                 out_str = str(x * y)
             else:
-                out_str = "http://www.lovemysurface.net/wp-content/uploads/2015/07/Windows-10-Upgrade-Error-Something-Happened.jpg"
+                out_str = "oops, operator machine :b:roke"
         except:
             out_str = "http://www.lovemysurface.net/wp-content/uploads/2015/07/Windows-10-Upgrade-Error-Something-Happened.jpg"
         await ctx.send(out_str)
