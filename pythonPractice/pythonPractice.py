@@ -106,7 +106,7 @@ class pythonPractice(commands.Cog):
             while total < int(num):
                 total += i
                 i += 1
+            outStr = str(total)
         except:
-            outStr = "pp"    
-        outStr = str(total)
+            outStr = "pp"     
         await ctx.send(outStr)
