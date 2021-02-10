@@ -1,6 +1,7 @@
 import discord
 from redbot.core import commands
 import random
+from datetime import date
 class pythonPractice(commands.Cog):
     """
     This is Totally Revision :)
@@ -21,14 +22,14 @@ class pythonPractice(commands.Cog):
             result = random.randrange(101)
             if (bias <= 100) and (bias >= 0):
                 if result >= bias: 
-                    out_str = "That there is a tails"
+                    outStr = "That there is a tails"
                 elif result < bias:
-                    out_str = "That there is a heads"
+                    outStr = "That there is a heads"
             else:
-                out_str = "cheeky. but nope, not gonna work"
+                outStr = "cheeky. but nope, not gonna work"
         except:
-            out_str = "Ah, that wasn't the right input"
-        await ctx.send(out_str)
+            outStr = "Ah, that wasn't the right input"
+        await ctx.send(outStr)
     @commands.command()
     async def calc(self, ctx: commands.Context, x, operator, y, type="int"):
         """
@@ -39,22 +40,58 @@ class pythonPractice(commands.Cog):
                 x = int(x)
                 y = int(y)
                 if operator == '+':
-                    out_str = str(x + y)
+                    outStr = str(x + y)
                 elif operator == '-':
-                    out_str = str(x - y)
+                    outStr = str(x - y)
                 elif operator == '/':
-                    out_str = str(x / y)
+                    outStr = str(x / y)
                 elif operator == 'x':
-                    out_str = str(x * y)
+                    outStr = str(x * y)
                 else:
-                    out_str = "oops, operator machine :b:roke"
+                    outStr = "oops, operator machine :b:roke"
             elif type == "str":
                 if operator == "+":
-                    out_str = str(x + y)
+                    outStr = str(x + y)
                 else:
-                    out_str = "Big chungus is disappointed in you"
+                    outStr = "Big chungus is disappointed in you"
             else:
-                out_str = type
+                outStr = type
         except:
-            out_str = "http://www.lovemysurface.net/wp-content/uploads/2015/07/Windows-10-Upgrade-Error-Something-Happened.jpg"
-        await ctx.send(out_str)
+            outStr = "http://www.lovemysurface.net/wp-content/uploads/2015/07/Windows-10-Upgrade-Error-Something-Happened.jpg"
+        await ctx.send(outStr)
+    @commands.command()
+    async def isleap(self, ctx: commands.Context, year):
+        """
+        Determines whether a year after 0CE is a leap year or not :)
+        """
+        curYear = date.today()
+        leapYear = False
+        try:
+            year = int(year)
+            if year % 4 == 0:
+                if year % 100:
+                    if year % 400 == 0:
+                        leapYear = True
+                    else:
+                        leapYear = False
+                else: 
+                    leapYear = True
+            else:
+                leapYear = False
+        except:
+            outStr = "Need to input a year as an integer :)"
+        if leapYear:
+            if year > curYear.year():
+                outStr = str(year) + " will be a leap year <:KannaRise:706697896292253728>"
+            elif year == curYear.year():
+                outStr = str(year) + " is a leap year <:KannaRise:706697896292253728>"
+            else:
+                outStr = str(year) + " was a leap year <:KannaRise:706697896292253728>"
+        else: 
+            if year > curYear.year():
+                outStr = str(year) + " will not be a leap year <:BigYui3:784248022174793728>"
+            elif year == curYear.year():
+                outStr = str(year) + " isn't a leap year <:BigYui3:784248022174793728>"
+            else:
+                outStr = str(year) + " was not a leap year <:BigYui3:784248022174793728>"
+        await ctx.send(outStr)
