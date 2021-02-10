@@ -81,16 +81,16 @@ class pythonPractice(commands.Cog):
         except:
             outStr = "Need to input a year as an integer :)"
         if leapYear:
-            if year > curYear.year():
+            if year > curYear.year:
                 outStr = str(year) + " will be a leap year <:KannaRise:706697896292253728>"
-            elif year == curYear.year():
+            elif year == curYear.year:
                 outStr = str(year) + " is a leap year <:KannaRise:706697896292253728>"
             else:
                 outStr = str(year) + " was a leap year <:KannaRise:706697896292253728>"
         else: 
-            if year > curYear.year():
+            if year > curYear.year:
                 outStr = str(year) + " will not be a leap year <:BigYui3:784248022174793728>"
-            elif year == curYear.year():
+            elif year == curYear.year:
                 outStr = str(year) + " isn't a leap year <:BigYui3:784248022174793728>"
             else:
                 outStr = str(year) + " was not a leap year <:BigYui3:784248022174793728>"
