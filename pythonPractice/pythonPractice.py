@@ -95,3 +95,18 @@ class pythonPractice(commands.Cog):
             else:
                 outStr = str(year) + " was not a leap year <:BigYui3:784248022174793728>"
         await ctx.send(outStr)
+    @commands.command()
+    async def triangle(self, ctx: commands.Context, num):
+        """
+        triangular numbers for some reason?
+        """
+        try:
+            i = 1
+            total = 0    
+            while total < int(num):
+                total += i
+                i += 1
+        except:
+            outStr = "pp"    
+        outStr = str(total)
+        await ctx.send(outStr)
