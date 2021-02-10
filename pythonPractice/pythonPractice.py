@@ -110,3 +110,31 @@ class pythonPractice(commands.Cog):
         except:
             outStr = "pp"     
         await ctx.send(outStr)
+    @commands.command()
+    async def addsecond(self, ctx: commands.Context, lst):
+        """
+        Adds every second item in a list of ints
+        Lists must be formatted like so: "1, 2, 3"
+        Exactly like that.
+        """
+        lst = lst.split(", ")
+        try:
+            i = 0
+            total = 0
+            while i < len(lst):
+                total += int(lst[i])
+                i += 2
+            outStr = str(total)
+        except:
+            outStr = "Uh oh, wrong input"
+        await ctx.send(outStr)
+    @commands.command()
+    async def binflip(self, ctx: commands.Context, binStr):
+        """
+        Flips a binary string. Pretty straightforward.
+        """
+        outStr = ""
+        for i in binStr:
+            outStr = i + outStr
+        await ctx.send(outStr)
+        
