@@ -148,6 +148,7 @@ class pythonPractice(commands.Cog):
                 end -= 1
             for i in range(start, end, step):
                 total += i
+            outStr = str(total)
         except:
             outStr = "Oops"
         await ctx.send(outStr)
