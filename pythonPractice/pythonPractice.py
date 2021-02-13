@@ -139,6 +139,9 @@ class pythonPractice(commands.Cog):
         await ctx.send(outStr)
     @commands.command()
     async def partial(self, ctx: commands.Context, start, end, step):
+        """
+        Takes the partial sum of every nth number between start and end, where n is your third argument :)
+        """
         try:
             total = 0
             start, end, step = int(start), int(end), int(step)
