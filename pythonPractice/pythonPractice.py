@@ -137,4 +137,18 @@ class pythonPractice(commands.Cog):
         for i in binStr:
             outStr = i + outStr
         await ctx.send(outStr)
-        
+    @commands.command()
+    async def partial(self, ctx: commands.Context, start, end, step):
+        try:
+            total = 0
+            start, end, step = int(start), int(end), int(step)
+            if end > 0:
+                end += 1
+            elif end < 0:
+                end -= 1
+            for i in range(start, end, step):
+                total += i
+        except:
+            outStr = "Oops"
+        await ctx.send(outStr)
+
