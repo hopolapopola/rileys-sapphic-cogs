@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import string
+from typing import Any, List, Tuple
 from redbot.core import commands
 from redbot.core.utils import common_filters
 from redbot.core.utils.chat_formatting import box
@@ -19,7 +20,28 @@ async def type_message(
                 return await destination.send(content=content, **kwargs)
         except discord.HTTPException:
             pass
-    
+async def reply(ctx: commands.Context, content: Any = None, **kwargs: Any):
+    """Safely reply to a command message.
+    If the command is in a guild, will reply, otherwise will send a message like normal.
+    Pre discord.py 1.6, replies are just messages sent with the users mention prepended.
+    """
+    if ctx.guild:
+        if (
+            hasattr(ctx, "reply")
+            and ctx.channel.permissions_for(ctx.guild.me).read_message_history
+        ):
+            mention_author = kwargs.pop("mention_author", False)
+            kwargs.update(mention_author=mention_author)
+            await ctx.reply(content=content, **kwargs)
+        else:
+            allowed_mentions = kwargs.pop(
+                "allowed_mentions",
+                discord.AllowedMentions(users=False),
+            )
+            kwargs.update(allowed_mentions=allowed_mentions)
+            await ctx.send(content=f"{ctx.message.author.mention} {content}", **kwargs)
+    else:
+        await ctx.send(content=content, **kwargs)   
 
 class bigGay(commands.Cog):
     """
