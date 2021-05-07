@@ -42,3 +42,27 @@ class bigGay(commands.Cog):
     async def intest(self, ctx: commands.Context, input, in2, in3):
         message = input + " " + in2 + " " + in3
         await ctx.send(message)  
+    
+    @commands.command()
+    async def unoreverse(self, ctx: commands.Context, *, text: str = None):
+        """Uno reverse card, but for text in messages"""
+        if not text:
+            if hasattr(ctx.message, "reference") and ctx.message.reference:
+                try:
+                    text = (
+                        await ctx.fetch_message(ctx.message.reference.message_id)
+                    ).content
+                except (discord.Forbidden, discord.NotFound, discord.HTTPException):
+                    pass
+            if not text:
+                text = (await ctx.channel.history(limit=2).flatten())[
+                    1
+                ].content or "I can't reverse that!\n https://thumbs.gfycat.com/WellwornYearlyGossamerwingedbutterfly-max-1mb.gif"
+        await type_message(
+            ctx.channel,
+            self.reverse(text),
+            allowed_mentions=discord.AllowedMentions(
+                everyone=False, users=False, roles=False
+            ),
+        )
+    
