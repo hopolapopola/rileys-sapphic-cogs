@@ -20,6 +20,7 @@ async def type_message(
                 return await destination.send(content=content, **kwargs)
         except discord.HTTPException:
             pass
+
 async def reply(ctx: commands.Context, content: Any = None, **kwargs: Any):
     """Safely reply to a command message.
     If the command is in a guild, will reply, otherwise will send a message like normal.
@@ -48,7 +49,7 @@ class bigGay(commands.Cog):
     The Big Gay is me :)
     """
     __author__ = ["hopolapopola"]
-    __version__ = "1.0g"
+    __version__ = "1.1"
     
     def __init__(self, bot):
         self.bot = bot
@@ -107,3 +108,15 @@ class bigGay(commands.Cog):
             ),
         )
 
+    @commands.command()
+    async def boringreverse(self, ctx: commands.Context, input):
+        i = input.length
+        output = ""
+        if output.length > 0:
+            while (i > -1):
+                output += input[i]
+                i-=1
+        else:
+            output="piss"
+        await ctx.send(output)
+        
