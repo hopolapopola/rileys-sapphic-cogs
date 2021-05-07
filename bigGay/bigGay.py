@@ -110,9 +110,9 @@ class bigGay(commands.Cog):
 
     @commands.command()
     async def boringreverse(self, ctx: commands.Context, input):
-        i = input.length
+        i = len(input)
         output = ""
-        if output.length > 0:
+        if i > 0:
             while (i > -1):
                 output += input[i]
                 i-=1
