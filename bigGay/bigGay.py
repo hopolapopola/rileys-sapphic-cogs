@@ -84,16 +84,16 @@ class bigGay(commands.Cog):
     async def intest(self, ctx: commands.Context, input, in2, in3):
         message = input + " " + in2 + " " + in3
         await ctx.send(message)  
-    def reverse(text):
-         i = len(text) -1
-        output = ""
-        if i > 0:
-            while (i > -1):
-                output += text[i]
-                i-=1
-        else:
-            output="piss"
-        return output
+    # def reverse(text):
+    #      i = len(text) -1
+    #     output = ""
+    #     if i > 0:
+    #         while (i > -1):
+    #             output += text[i]
+    #             i-=1
+    #     else:
+    #         output="piss"
+    #     return output
     
     @commands.command()
     async def unoreverse(self, ctx: commands.Context, *, text: str = None):
