@@ -9,7 +9,7 @@ class transBot(commands.Cog):
     also i'm not reusing code so don't @ me 
     """
     __author__ = ["hopolapopola"]
-    __version__ = "1.1"
+    __version__ = "1.1.1"
 
     def __init__(self,bot):
         self.bot = bot
@@ -21,9 +21,9 @@ class transBot(commands.Cog):
             ("I want to be "+pronouns[0]+"'s friend, "+pronouns[1]+" seem like a lovely person :)"),
             ("I want to be "+pronouns[0]+"'s friend, "+pronouns[1]+" seems like a lovely person :)"),
             (pronouns[0]+" has a cool haircut and "+pronouns[3]+" shoes are lit!"),
-            (pronouns[0]+" is such a great name!"+pronouns[0]+" chose "+pronouns[3]+" name "+pronouns[5]+" just makes "+pronouns[1]+" even cooler :3"),
+            (pronouns[0]+" is such a great name!"+pronouns[0]+" chose "+pronouns[3]+" name "+pronouns[5]+" which makes "+pronouns[1]+" even cooler :3"),
         ]
-        choice = random.randrange(1, 4)   
+        choice = random.randrange(1, 5)   
         if choice == 1:
             text = paragraphs[0]
         elif choice == 2:
