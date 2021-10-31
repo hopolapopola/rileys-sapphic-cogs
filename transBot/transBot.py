@@ -41,6 +41,12 @@ class transBot(commands.Cog):
 
     @commands.command()    
     async def pronouns(self, ctx: commands.Context, name, p1, p2, p3, p4):
+        """
+        basically transbot lol
+        do "pronouns name they them their theirs" type formatting
+        hopefully that makes sense?
+        """
+    
         if (p1 == "he") or (p1 == "she") or (p1 == "it"):
             type = 1
         else: 
