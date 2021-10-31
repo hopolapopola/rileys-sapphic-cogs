@@ -2,7 +2,7 @@ import discord
 from redbot.core import commands
 import random
 
-class transBot(commands.cog):
+class transBot(commands.Cog):
     """
     mfw i literally recreate TransBot in like, an hour idk how long this will take but we shall see :))
 
