@@ -35,5 +35,5 @@ class transBot(commands.Cog):
     @commands.command()    
     async def pronouns(self, ctx: commands.Context, name, p1, p2, p3, p4):
         pronouns = [name, p1, p2, p3, p4, p2+"self"]
-        message = createWallOfText(pronouns)
+        message = transBot.createWallOfText(pronouns)
         await ctx.send(message)
